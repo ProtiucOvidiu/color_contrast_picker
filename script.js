@@ -35,6 +35,7 @@ function print() {
 }
 
 function setRandomColor() {
+  // Crearea de culoare random.
   color = {
     r: Math.random(),
     g: Math.random(),
