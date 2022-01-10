@@ -41,7 +41,17 @@ function setRandomColor() {
     b: Math.random()
   }
   const guess = net.run(color)[0]
-  guessEl.style.color = guess > .5 ? '#FFF' : '#000'
+  console.log(net.run(color)[0])
+  // Daca culoarea e apoximativ verde, atunci vom seta textul pe rosu
+  if(color.g > 0.5 && color.r < .5 && color.b< .5)
+  {
+    guessEl.style.color = '#E54021'
+  }
+  else
+  {
+    // Daca avem deja in datele noastre ceva, programul se invata cu ce ne culoare dorim noi sa afisam.
+    guessEl.style.color = guess > .5 ? '#FFF' : '#000'
+  }
   colorEl.style.backgroundColor = 
     `rgba(${color.r * 255}, ${color.g * 255}, ${color.b * 255})`
 }
